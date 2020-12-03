@@ -1,0 +1,60 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Cloths</h4>
+                        <p class="card-category"> List of cloths</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>
+                                            Title
+                                        </th>
+                                        <th>
+                                            Cover
+                                        </th>
+                                        <th>
+                                            Detail
+                                        </th>
+                                        <th>
+                                            Base Price
+                                        </th>
+                                        <th>
+                                            Retail Price
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each cloths}}
+                                    <tr>
+                                        <td>
+                                            {{title}}
+                                        </td>
+                                        <td>
+                                            {{cover}}
+                                        </td>
+                                        <td>
+                                            {{detail}}
+                                        </td>
+                                        <td>
+                                            {{basePrice}}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{retailPrice}}
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
