@@ -1,1 +1,1 @@
-# express-demo
+# admin site for store managing
