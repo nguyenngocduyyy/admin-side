@@ -16195,7 +16195,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     position: relative;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .table-shopping>thead>tr>th {
