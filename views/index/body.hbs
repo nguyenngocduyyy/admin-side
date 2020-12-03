@@ -22,9 +22,6 @@
                                             Detail
                                         </th>
                                         <th>
-                                            Base Price
-                                        </th>
-                                        <th>
                                             Retail Price
                                         </th>
                                     </tr>
@@ -33,19 +30,16 @@
                                     {{#each cloths}}
                                     <tr>
                                         <td>
-                                            {{title}}
+                                            {{nameProduct}}
                                         </td>
                                         <td>
-                                            {{cover}}
+                                            {{imgSrc}}
                                         </td>
                                         <td>
-                                            {{detail}}
-                                        </td>
-                                        <td>
-                                            {{basePrice}}
+                                            {{productDescription}}
                                         </td>
                                         <td class="text-primary">
-                                            {{retailPrice}}
+                                            {{price}}
                                         </td>
                                     </tr>
                                     {{/each}}
