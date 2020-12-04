@@ -8789,8 +8789,8 @@ a.text-dark:focus {
 
 .btn.btn-primary {
     color: #fff;
-    background-color: #9c27b0;
-    border-color: #9c27b0;
+    background-color: #20845a;
+    border-color: #20845a;
     box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
 
@@ -16826,7 +16826,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-    background: linear-gradient(60deg, #ab47bc, #8e24aa);
+    background: linear-gradient(60deg, #85d6aa, #20845a);
 }
 
 .card .card-header-info .card-icon,
@@ -17035,6 +17035,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 
 .card .card-header .card-category {
     margin: 0;
+    display: inline-block;
 }
 
 .card .card-header.card-header-text {

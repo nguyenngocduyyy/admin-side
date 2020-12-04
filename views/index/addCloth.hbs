@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">Add new product</h4>
+        {{!-- <p class="card-category">Complete your profile</p> --}}
+    </div>
+    <div class="card-body">
+        <form name="cloth" method="POST">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Product name</label>
+                        <input name="nameProduct" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Price</label>
+                        <input name="price" type="number" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Cover image link</label>
+                        <input name="imgSrc" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label></label>
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Product description </label>
+                            <textarea name="productDescription" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary pull-right">ADD</input>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</div>

@@ -7,9 +7,11 @@ const hbs = require('hbs');
 const { MongoClient } = require("mongodb");
 
 const homeRouter = require('./routes/home');
-const usersRouter = require('./routes/users');
-const booksRouter = require('./routes/cloths');
-const detailRouter = require('./routes/detail');
+const addClothRouter = require('./routes/addCloth');
+
+// const usersRouter = require('./routes/users');
+// const booksRouter = require('./routes/cloths');
+// const detailRouter = require('./routes/detail');
 
 require('./dal/db');
 
@@ -50,9 +52,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
-app.use('/users', usersRouter);
-app.use('/books', booksRouter);
-app.use('/detail', detailRouter);
+app.use('/add-cloth', addClothRouter);
+// app.use('/users', usersRouter);
+// app.use('/books', booksRouter);
+// app.use('/detail', detailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
