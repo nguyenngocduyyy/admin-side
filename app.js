@@ -8,42 +8,23 @@ const { MongoClient } = require("mongodb");
 
 const homeRouter = require('./routes/home');
 const addClothRouter = require('./routes/addCloth');
-
-// const usersRouter = require('./routes/users');
-// const booksRouter = require('./routes/cloths');
-// const detailRouter = require('./routes/detail');
+const handlebarhelpers = require('handlebars-helpers')();
+const exphbs  = require('express-handlebars');
 
 require('./dal/db');
 
-// Connect to MongoDB
-// Connection URI
-// const uri =
-//     "mongodb+srv://admin:o1JDnUaeBdA2t17W@cluster0.cejye.mongodb.net/test?authSource=admin&replicaSet=atlas-en1g24-shard-0&readPreference=primary&appname=Bookstore%20Web&ssl=true";
-// // Create a new MongoClient
-// const client = new MongoClient(uri, { useUnifiedTopology: true });
-//
-// async function run() {
-//   try {
-//     // Connect the client to the server
-//     await client.connect();
-//     // Establish and verify connection
-//     const db = await client.db("bookstore");
-//     const booksCollection = db.collection('books');
-//     const books = await booksCollection.find({}).toArray();
-//     console.dir(books);
-//   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await client.close();
-//   }
-// }
-//
-// run().catch(console.dir);
 
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.engine('.hbs', exphbs({defaultLayout: 'layout',
+    extname: '.hbs',
+    layoutsDir: __dirname + '/views/',
+    helpers:handlebarhelpers,
+}));
+
 
 app.use(logger('dev'));
 app.use(express.json());
