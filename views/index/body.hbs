@@ -17,6 +17,9 @@
                                             Title
                                         </th>
                                         <th>
+                                            Product Type
+                                        </th>
+                                        <th>
                                             Cover
                                         </th>
                                         <th>
@@ -24,6 +27,9 @@
                                         </th>
                                         <th>
                                             Retail Price
+                                        </th>
+                                        <th>
+                                            Edit cloth
                                         </th>
                                     </tr>
                                 </thead>
@@ -34,6 +40,9 @@
                                             {{nameProduct}}
                                         </td>
                                         <td>
+                                            {{typeProduct}}
+                                        </td>
+                                        <td>
                                             {{imgSrc}}
                                         </td>
                                         <td>
@@ -41,6 +50,11 @@
                                         </td>
                                         <td class="text-primary">
                                             {{price}}
+                                        </td>
+                                        <td>
+                                            <a href="/add-cloth/{{_id}}">
+                                                <i class="material-icons">open_in_new</i>
+                                            </a>
                                         </td>
                                     </tr>
                                     {{/each}}

@@ -1,10 +1,10 @@
 const { db } = require('../dal/db');
 const { ObjectId } = require('mongodb');
 
-exports.list = async() => {
+exports.list = async(filter = {}) => {
     console.log('model db');
     const booksCollection = db().collection('cloth');
-    const books = await booksCollection.find({}).toArray();
+    const books = await booksCollection.find(filter).toArray();
     console.dir(books);
     return books;
 }
