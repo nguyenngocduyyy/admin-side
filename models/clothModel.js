@@ -9,6 +9,22 @@ exports.list = async(filter = {}) => {
     return books;
 }
 
+exports.count = async() => {
+    const productsCollection = db().collection('cloth');
+    return productsCollection.find({}).count();
+}
+
+exports.listPaginate = async(filter, pageIndex, itemPerPage) => {
+    const productsCollection = db().collection('cloth');
+
+    const cloths = await productsCollection.find(filter)
+        .skip(pageIndex * itemPerPage)
+        .limit(itemPerPage)
+        .toArray();
+
+    return cloths;
+}
+
 exports.get = async(id) => {
     const booksCollection = db().collection('cloth');
     const book = await booksCollection.findOne({ _id: ObjectId(id) })

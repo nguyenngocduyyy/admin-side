@@ -61,8 +61,71 @@
                                 </tbody>
                             </table>
                         </div>
+                        
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {{#if productId}}
+                <ul class="pagination justify-content-center">
+        
+                    {{#if hasPreviousPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="/?productId={{productId}}&page={{prevPage}}" tabindex="-1">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/?productId={{productId}}&page={{prevPage}}">{{prevPage}}</a>
+                    </li>
+                    {{/if}}
+                    <li class="page-item active">
+                        <a class="page-link" href="javascript:;">{{currentPage}} <span class="sr-only">(current)</span></a>
+                    </li>
+        
+        
+                    {{#if hasNextPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="/?productId={{productId}}&page={{nextPage}}">{{nextPage}}</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/?productId={{productId}}&page={{nextPage}}">
+                            Next
+                        </a>
+                    </li>
+                    {{/if}}
+        
+                </ul>
+                {{else}}
+                <ul class="pagination justify-content-center">
+        
+                    {{#if hasPreviousPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="/?page={{prevPage}}">Previous
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/?page={{prevPage}}">{{prevPage}}</a>
+                    </li>
+                    {{/if}}
+        
+                    <li class="page-item active">
+                        <a class="page-link" href="javascript:;">{{currentPage}} <span class="sr-only">(current)</span></a>
+                    </li>
+        
+                    {{#if hasNextPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="/?page={{nextPage}}">{{nextPage}}</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/?page={{nextPage}}">Next
+                        </a>
+                    </li>
+                    {{/if}}
+        
+                </ul>
+                {{/if}}
             </div>
         </div>
     </div>

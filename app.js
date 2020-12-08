@@ -5,13 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
 const { MongoClient } = require("mongodb");
+const handlebarhelpers = require('handlebars-helpers')();
+const exphbs = require('express-handlebars');
 
 const homeRouter = require('./routes/home');
 const addClothRouter = require('./routes/addCloth');
 
-// const usersRouter = require('./routes/users');
-// const booksRouter = require('./routes/cloths');
-// const detailRouter = require('./routes/detail');
 
 require('./dal/db');
 
@@ -44,6 +43,12 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.engine('.hbs', exphbs({
+    defaultLayout: 'layout',
+    extname: '.hbs',
+    layoutsDir: __dirname + '/views/',
+    helpers: handlebarhelpers,
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
