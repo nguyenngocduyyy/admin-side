@@ -3,7 +3,7 @@ const addClothModel = require('../models/addClothModel');
 exports.index = async(req, res, next) => {
     const typeProduct = await addClothModel.listTypeProduct();
     console.log(typeProduct);
-    res.render('index/addCloth', { title: 'Add new cloth', typeProduct: typeProduct, btnText: 'ADD', delBtn: 'hidden' });
+    res.render('index/addCloth', { title: 'Add new cloth', typeProduct: typeProduct, btnText: 'CONFIRM', delBtn: 'hidden' });
 };
 
 exports.editGet = async(req, res, next) => {
@@ -11,7 +11,7 @@ exports.editGet = async(req, res, next) => {
     const cloth = await addClothModel.getClothById(id);
     console.log(cloth);
     const typeProduct = await addClothModel.listTypeProduct();
-    res.render('index/addCloth', { title: 'Edit cloth', body: cloth[0], typeProduct: typeProduct, btnText: 'EDIT', id: id });
+    res.render('index/addCloth', { title: 'Edit cloth', body: cloth[0], typeProduct: typeProduct, btnText: 'CONFIRM', id: id });
 };
 
 exports.remove = async(req, res, next) => {
@@ -25,7 +25,7 @@ exports.add = async(req, res, next) => {
     console.log(body);
     const f = await addClothModel.add(body);
     const typeProduct = await addClothModel.listTypeProduct();
-    res.render('index/addCloth', { title: 'Add new cloth', f: f, body: body, typeProduct: typeProduct, btnText: 'ADD', delBtn: 'hidden' });
+    res.render('index/addCloth', { title: 'Add new cloth', f: f, body: body, typeProduct: typeProduct, btnText: 'CONFIRM', delBtn: 'hidden' });
 };
 
 exports.editPost = async(req, res, next) => {
@@ -34,5 +34,5 @@ exports.editPost = async(req, res, next) => {
     const body = req.body;
     const f = await addClothModel.update(id, body);
     const typeProduct = await addClothModel.listTypeProduct();
-    res.render('index/addCloth', { title: 'Edit cloth', f: f, body: body, typeProduct: typeProduct, btnText: 'EDIT', id: id });
+    res.render('index/addCloth', { title: 'Edit cloth', f: f, body: body, typeProduct: typeProduct, btnText: 'CONFIRM', id: id });
 };
