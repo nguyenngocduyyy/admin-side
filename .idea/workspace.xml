@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9f85ed7-0f95-45d1-afb4-169e2515537b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/admin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/clothService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/homeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/homeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/addClothController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/editClothController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/addClothModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/editClothModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/addCloth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/editCloth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/books/detail.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/books/list.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index/addCloth.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index/editCloth.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index/body.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index/body.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +42,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="www" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bin/www" working-dir="$PROJECT_DIR$/bin">
+    <configuration name="www" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="www" working-dir="$PROJECT_DIR$/bin">
+      <envs>
+        <env name="PORT" value="5001" />
+      </envs>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -63,6 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607439407017</updated>
       <workItem from="1607439412709" duration="4807000" />
+      <workItem from="1608989374362" duration="366000" />
     </task>
     <servers />
   </component>
@@ -79,6 +85,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

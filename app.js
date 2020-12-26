@@ -9,7 +9,7 @@ const handlebarhelpers = require('handlebars-helpers')();
 const exphbs = require('express-handlebars');
 
 const homeRouter = require('./routes/home');
-const addClothRouter = require('./routes/addCloth');
+const editClothRouter = require('./routes/editCloth');
 require('./dal/db');
 
 const app = express();
@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
-app.use('/add-cloth', addClothRouter);
+app.use('/editCloth', editClothRouter);
 // app.use('/users', usersRouter);
 // app.use('/books', booksRouter);
 // app.use('/detail', detailRouter);

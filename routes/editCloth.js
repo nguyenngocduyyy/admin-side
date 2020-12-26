@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const addClothController = require('../controllers/addClothController');
+const addClothController = require('../controllers/editClothController');
 const clothController = require('../controllers/clothController');
 
 router.get('/', addClothController.index);
