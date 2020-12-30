@@ -15,6 +15,7 @@ module.exports.index = async(req, res, next) => {
     if (q)
         filter.nameProduct = new RegExp(q, 'i');
     const products = await clothService.list(filter, page - 1, ITEM_PER_PAGE);
+    // console.log(products);
     // Get products from model
     //const products = await productService.list();
     // Pass data to view to display list of products
