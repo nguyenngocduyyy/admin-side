@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 const uri =
-    "mongodb+srv://nguyentanvinh7a:01685698193@cluster0.ebrk4.mongodb.net/<dbname>?retryWrites=true&w=majority";
+    "mongodb+srv://nguyentanvinh7a:01685698193@cluster0.ebrk4.mongodb.net/<dbname>?authSource=admin&replicaSet=atlas-bdcukd-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true";
 // Create a new MongoClient
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 

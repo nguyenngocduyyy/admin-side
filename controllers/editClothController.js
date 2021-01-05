@@ -1,9 +1,13 @@
 const editClothModel = require('../models/editClothModel');
+const formidable = require('formidable');
+const { cloudinary } = require('../dal/cloudinary');
+
+var form = new formidable();
 
 exports.index = async(req, res, next) => {
     const typeProduct = await editClothModel.listTypeProduct();
     console.log(typeProduct);
-    res.render('index/editCloth', { title: 'Add new cloth', typeProduct: typeProduct, btnText: 'CONFIRM', delBtn: 'hidden' });
+    res.render('index/editCloth', { title: 'Add new cloth', typeProduct: typeProduct, btnText: 'CONFIRM', delBtn: 'hidden', body: { imgSrc: 'Select file...' } });
 };
 
 exports.editGet = async(req, res, next) => {
@@ -21,11 +25,19 @@ exports.remove = async(req, res, next) => {
 };
 
 exports.add = async(req, res, next) => {
-    const body = req.body;
-    console.log(body);
-    const f = await editClothModel.add(body);
-    const typeProduct = await editClothModel.listTypeProduct();
-    res.render('index/editCloth', { title: 'Add new cloth', f: f, body: body, typeProduct: typeProduct, btnText: 'CONFIRM', delBtn: 'hidden' });
+    await form.parse(req, (err, fields, files) => {
+        var body;
+        body = fields;
+        console.log(files);
+        cloudinary.uploader.upload(files.imgSrc.path, async result => {
+            console.log(result);
+            body.imgSrc = result.url;
+            console.log(body);
+            editClothModel.add(body);
+            const typeProduct = await editClothModel.listTypeProduct();
+            res.render('index/editCloth', { title: 'Add new cloth', body: body, typeProduct: typeProduct, btnText: 'CONFIRM', delBtn: 'hidden' });
+        });
+    });
 };
 
 exports.editPost = async(req, res, next) => {

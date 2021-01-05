@@ -2,6 +2,8 @@ const { ObjectId } = require('mongodb');
 const { db } = require('../dal/db');
 const clothModel = require('../models/clothModel');
 
+
+
 exports.getClothById = async(id) => {
     const cloth = await clothModel.list({ _id: ObjectId(id) });
     return cloth;
@@ -25,8 +27,8 @@ exports.removeClothById = async(id) => {
 }
 
 exports.add = async(cloth) => {
-    var f = true;
     try {
+        console.log(cloth);
         const typeProduct = await this.listTypeProduct({ nameTypeProduct: cloth.typeProduct });
         console.log(typeProduct[0]._id);
         await db().collection('cloth').insertOne({
@@ -38,9 +40,8 @@ exports.add = async(cloth) => {
         });
     } catch (e) {
         console.log(e);
-        f = false;
     }
-    return f;
+    return cloth;
 }
 
 exports.update = async(id, cloth) => {

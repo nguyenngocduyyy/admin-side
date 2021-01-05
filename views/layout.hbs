@@ -139,6 +139,17 @@
     <script src="../assets/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+    <script>
+        // FileInput
+            $('.form-file-simple .inputFileVisible').click(function () {
+                $(this).siblings('.inputFileHidden').trigger('click');
+            });
+            $('.form-file-simple .inputFileHidden').change(function () {
+                    var filename = $(this).val().replace(/C:\\fakepath\\/i, '');
+                    $(this).siblings('.inputFileVisible').val(filename);
+                });
+    </script>
+    
 </body>
 
 </html>
