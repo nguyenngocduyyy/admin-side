@@ -3,8 +3,8 @@ const { ObjectId } = require('mongodb');
 
 exports.list = async(filter = {}) => {
     console.log('model db');
-    const booksCollection = db().collection('cloth');
-    const books = await booksCollection.find(filter).toArray();
+    const productCollection = db().collection('cloth');
+    const books = await productCollection.find(filter).toArray();
     console.dir(books);
     return books;
 }

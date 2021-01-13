@@ -4,22 +4,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-info">
-                        <h4 class="card-title ">Products</h4>
-                        <p class="card-category"> List of products</p>
-                        <div>
-                            <a type="button" href="/editCloth" class="btn btn-primary pull-right">Add new</a>
-                            <span class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    FILTER PRODUCT
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    {{#each typeProduct}}
-                                    <a class="dropdown-item" href="/?productId={{_id}}">{{nameTypeProduct}}</a>
-                                    {{/each}}
-                                </div>
-                            </span>
-                        </div>
+                        <h4 class="card-title ">Users</h4>
+                        <p class="card-category"> List of users</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -27,46 +13,46 @@
                                 <thead class=" text-primary">
                                     <tr>
                                         <th>
-                                            Title
+                                            Username
                                         </th>
                                         <th>
-                                            Product Type
+                                            Name
                                         </th>
                                         <th>
-                                            Cover
+                                            Surname
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                        <th>
+                                            Status
                                         </th>
                                         <th>
                                             Detail
                                         </th>
-                                        <th>
-                                            Retail Price
-                                        </th>
-                                        <th>
-                                            Edit cloth
-                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#each products}}
+                                    {{#each users}}
                                     <tr>
                                         <td>
-                                            {{nameProduct}}
+                                            {{username}}
                                         </td>
                                         <td>
-                                            {{typeProduct}}
+                                            {{name}}
                                         </td>
                                         <td>
-                                            {{imgSrc}}
+                                            {{surname}}
                                         </td>
                                         <td>
-                                            {{productDescription}}
+                                            {{email}}
                                         </td>
-                                        <td class="text-primary">
-                                            {{price}}
+                                        <td name="status" class="text-success">
+                                            {{status}}
                                         </td>
                                         <td>
-                                            <a href="/editCloth/{{_id}}">
-                                                <i class="material-icons">open_in_new</i>
+                                            <a href="/users/{{_id}}">
+                                                <i class="material-icons">contact_page</i>
                                             </a>
                                         </td>
                                     </tr>
@@ -81,7 +67,7 @@
                                 <ul class="pagination justify-content-center">
                                     {{#isnt currentPage 1}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{prevPage}}" aria-label="Previous">
+                                        <a class="page-link" href="/users/?page={{prevPage}}" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
@@ -90,7 +76,7 @@
 
                                     {{#if hasPreviousPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{prevPage}}">{{prevPage}}</a>
+                                        <a class="page-link" href="/users/?page={{prevPage}}">{{prevPage}}</a>
                                     </li>
                                     {{/if}}
 
@@ -100,13 +86,13 @@
 
                                     {{#if hasNextPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{nextPage}}">{{nextPage}}</a>
+                                        <a class="page-link" href="/users/?page={{nextPage}}">{{nextPage}}</a>
                                     </li>
                                     {{/if}}
 
                                     {{#gt lastPage currentPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{nextPage}}" aria-label="Next">
+                                        <a class="page-link" href="/users/?page={{nextPage}}" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
                                         </a>
@@ -119,7 +105,7 @@
                                 <ul class="pagination justify-content-center">
                                     {{#isnt currentPage 1}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?productId={{productId}}&page={{prevPage}}"
+                                        <a class="page-link" href="/users/?productId={{productId}}&page={{prevPage}}"
                                             aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
@@ -130,7 +116,7 @@
                                     {{#if hasPreviousPage}}
                                     <li class="page-item">
                                         <a class="page-link"
-                                            href="/?productId={{productId}}&page={{prevPage}}">{{prevPage}}</a>
+                                            href="/users/?productId={{productId}}&page={{prevPage}}">{{prevPage}}</a>
                                     </li>
                                     {{/if}}
 
@@ -141,13 +127,13 @@
                                     {{#if hasNextPage}}
                                     <li class="page-item">
                                         <a class="page-link"
-                                            href="/?productId={{productId}}&page={{nextPage}}">{{nextPage}}</a>
+                                            href="/users/?productId={{productId}}&page={{nextPage}}">{{nextPage}}</a>
                                     </li>
                                     {{/if}}
 
                                     {{#gt lastPage currentPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?productId={{productId}}&page={{nextPage}}"
+                                        <a class="page-link" href="/users/?productId={{productId}}&page={{nextPage}}"
                                             aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
@@ -160,8 +146,7 @@
                                 <ul class="pagination justify-content-center">
                                     {{#isnt currentPage 1}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?q={{q}}&page={{prevPage}}"
-                                            aria-label="Previous">
+                                        <a class="page-link" href="/users/?q={{q}}&page={{prevPage}}" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
@@ -170,8 +155,7 @@
 
                                     {{#if hasPreviousPage}}
                                     <li class="page-item">
-                                        <a class="page-link"
-                                            href="/?q={{q}}&page={{prevPage}}">{{prevPage}}</a>
+                                        <a class="page-link" href="/users/?q={{q}}&page={{prevPage}}">{{prevPage}}</a>
                                     </li>
                                     {{/if}}
 
@@ -181,15 +165,13 @@
 
                                     {{#if hasNextPage}}
                                     <li class="page-item">
-                                        <a class="page-link"
-                                            href="/?q={{q}}&page={{nextPage}}">{{nextPage}}</a>
+                                        <a class="page-link" href="/users/?q={{q}}&page={{nextPage}}">{{nextPage}}</a>
                                     </li>
                                     {{/if}}
 
                                     {{#gt lastPage currentPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?q={{q}}&page={{nextPage}}"
-                                            aria-label="Next">
+                                        <a class="page-link" href="/users/?q={{q}}&page={{nextPage}}" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
                                         </a>

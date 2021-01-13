@@ -10,6 +10,7 @@ const exphbs = require('express-handlebars');
 
 const homeRouter = require('./routes/home');
 const editClothRouter = require('./routes/editCloth');
+const userRouter = require('./routes/users');
 require('./dal/db');
 
 const app = express();
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
 app.use('/editCloth', editClothRouter);
+app.use('/users', userRouter);
 // app.use('/users', usersRouter);
 // app.use('/books', booksRouter);
 // app.use('/detail', detailRouter);

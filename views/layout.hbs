@@ -14,7 +14,8 @@
     <!-- Material Kit CSS -->
     <link href="/assets/css/material-dashboard.css" rel="stylesheet" />
     <!-- Bootstrap core CSS -->
-    {{!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> --}}
+    {{!--
+    <link href="/css/bootstrap.min.css" rel="stylesheet"> --}}
 </head>
 
 <body>
@@ -27,23 +28,29 @@
   -->
             <div class="logo">
                 <a href="/" class="simple-text logo-mini">
-                    SHOP MANAGEMENT
+                    VDV SHOP MANAGER
                 </a>
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    {{!-- <li class="nav-item active  ">
-                        <a class="nav-link" href="#0">
-                            <i class="material-icons">dashboard</i>
-                            <p>Dashboard</p>
+                    <li class="nav-item {{navProduct}}">
+                        <a class="nav-link" href="/">
+                            <i class="material-icons">category</i>
+                            <p>Products</p>
                         </a>
-                    </li> --}}
+                    </li>
+                    <li class="nav-item {{navUser}}">
+                        <a class="nav-link" href="/users">
+                            <i class="material-icons">group</i>
+                            <p>User</p>
+                        </a>
+                    </li>
                     <!-- your sidebar here -->
                 </ul>
             </div>
         </div>
         <div class="main-panel">
-            <!-- Navbar -->
+            {{!-- <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
@@ -67,7 +74,7 @@
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav> --}}
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
@@ -140,16 +147,39 @@
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
     <script>
+        $(document).ready(function () {
+            var element = document.getElementsByName("status");
+            if (typeof (element) != 'undefined' && element != null) {
+                for (var i = 0; i < element.length; i++) {
+                    if (element[i].innerText.localeCompare("active") != 0) {
+                        element[i].className = 'text-danger';
+                    }
+
+                }
+            }
+
+            var e = document.getElementsByName("statusBtn");
+            if (typeof (e) != 'undefined' && e != null) {
+                for (var i = 0; i < e.length; i++) {
+                    if (e[i].innerText.localeCompare("DEACTIVATE USER") != 0) {
+                        e[i].classList.add('btn-success');
+                    } else {
+                        e[i].classList.add('btn-danger');
+                    }
+
+                }
+            }
+        });
         // FileInput
-            $('.form-file-simple .inputFileVisible').click(function () {
-                $(this).siblings('.inputFileHidden').trigger('click');
-            });
-            $('.form-file-simple .inputFileHidden').change(function () {
-                    var filename = $(this).val().replace(/C:\\fakepath\\/i, '');
-                    $(this).siblings('.inputFileVisible').val(filename);
-                });
+        $('.form-file-simple .inputFileVisible').click(function () {
+            $(this).siblings('.inputFileHidden').trigger('click');
+        });
+        $('.form-file-simple .inputFileHidden').change(function () {
+            var filename = $(this).val().replace(/C:\\fakepath\\/i, '');
+            $(this).siblings('.inputFileVisible').val(filename);
+        });
     </script>
-    
+
 </body>
 
 </html>

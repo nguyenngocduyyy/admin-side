@@ -2,9 +2,9 @@ const { db } = require('../dal/db');
 const { ObjectId } = require('mongodb');
 const editClothModel = require('./editClothModel');
 
-exports.count = async() => {
+exports.count = async(filter = {}) => {
     const productsCollection = await db().collection('cloth');
-    return productsCollection.find({}).count();
+    return productsCollection.find(filter).count();
 }
 
 exports.list = async(filter, pageIndex, itemPerPage) => {

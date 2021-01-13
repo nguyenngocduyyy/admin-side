@@ -1,0 +1,66 @@
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">{{title}}</h4>
+        {{!-- <p class="card-category">Complete your profile</p> --}}
+    </div>
+    <div class="card-body">
+        <form name="cloth" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Username</label>
+                        <input name="nameProduct" type="text" class="form-control" readonly value="{{body.username}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Name</label>
+                        <input name="price" type="text" class="form-control" readonly value="{{body.name}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Surname</label>
+                        <input name="price" type="text" class="form-control" readonly value="{{body.surname}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Email</label>
+                        <input name="price" type="text" class="form-control" readonly value="{{body.email}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Street</label>
+                        <input name="price" type="text" class="form-control" readonly value="{{body.street}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">District</label>
+                        <input name="price" type="text" class="form-control" readonly value="{{body.district}}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Province</label>
+                        <input name="price" type="text" class="form-control" readonly value="{{body.province}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Phone Number</label>
+                        <input name="price" type="number" class="form-control" readonly value="{{body.phoneNumber}}">
+                    </div>
+                </div>
+            </div>
+            <a href="/users/{{id}}/activate" name="statusBtn" class="btn btn-lg" role="button" aria-disabled="true"
+                >{{delBtn}}</a>            
+        </form>
+    </div>
+</div>
