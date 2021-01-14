@@ -2,7 +2,7 @@ const clothService = require('../models/clothService');
 const editClothModel = require('../models/editClothModel');
 
 const { ObjectId } = require('mongodb');
-const ITEM_PER_PAGE = 6;
+const ITEM_PER_PAGE = 12;
 
 module.exports.index = async(req, res, next) => {
     const page = +req.query.page || 1;

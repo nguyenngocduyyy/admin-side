@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">{{title}}</h4>
+        {{!-- <p class="card-category">Complete your profile</p> --}}
+    </div>
+    <div class="card-body">
+        <form name="cloth" method="POST">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Product type name</label>
+                        <input name="nameTypeProduct" type="text" class="form-control" value="{{body.nameTypeProduct}}" required>
+                    </div>
+                </div>
+            </div>
+            <a href="/typeProduct/editTypeProduct/{{id}}/remove" class="btn btn-danger btn-lg" role="button"
+                aria-disabled="true" {{delBtn}}>DELETE</a>
+            <button type="submit" class="btn btn-success btn-lg pull-right">{{btnText}}</input>
+                <div class="clearfix"></div>
+        </form>
+    </div>
+</div>

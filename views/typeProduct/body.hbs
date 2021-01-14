@@ -4,21 +4,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-info">
-                        <h4 class="card-title ">Products</h4>
-                        <p class="card-category"> List of products</p>
+                        <h4 class="card-title ">Product Types</h4>
+                        <p class="card-category"> List of product types</p>
                         <div>
-                            <a type="button" href="/editCloth" class="btn btn-primary pull-right">Add new</a>
-                            <span class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    FILTER PRODUCT
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    {{#each typeProduct}}
-                                    <a class="dropdown-item" href="/?productId={{_id}}">{{nameTypeProduct}}</a>
-                                    {{/each}}
-                                </div>
-                            </span>
+                            <a type="button" href="/typeProduct/editTypeProduct" class="btn btn-primary pull-right">Add new</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -27,22 +16,10 @@
                                 <thead class=" text-primary">
                                     <tr>
                                         <th>
-                                            Title
-                                        </th>
-                                        <th>
                                             Product Type
                                         </th>
-                                        <th>
-                                            Cover
-                                        </th>
-                                        <th>
-                                            Detail
-                                        </th>
-                                        <th>
-                                            Retail Price
-                                        </th>
-                                        <th>
-                                            Edit Product
+                                        <th style="text-align:end;">
+                                            Edit product types
                                         </th>
                                     </tr>
                                 </thead>
@@ -50,23 +27,11 @@
                                     {{#each products}}
                                     <tr>
                                         <td>
-                                            {{nameProduct}}
+                                            {{nameTypeProduct}}
                                         </td>
                                         <td>
-                                            {{typeProduct}}
-                                        </td>
-                                        <td>
-                                            {{imgSrc}}
-                                        </td>
-                                        <td>
-                                            {{productDescription}}
-                                        </td>
-                                        <td class="text-primary">
-                                            {{price}}
-                                        </td>
-                                        <td>
-                                            <a href="/editCloth/{{_id}}">
-                                                <i class="material-icons">open_in_new</i>
+                                            <a href="/typeProduct/editTypeProduct/{{_id}}">
+                                                <i class="material-icons pull-right">open_in_new</i>
                                             </a>
                                         </td>
                                     </tr>
@@ -81,7 +46,7 @@
                                 <ul class="pagination justify-content-center">
                                     {{#isnt currentPage 1}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{prevPage}}" aria-label="Previous">
+                                        <a class="page-link" href="/typeProduct/?page={{prevPage}}" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
@@ -90,7 +55,7 @@
 
                                     {{#if hasPreviousPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{prevPage}}">{{prevPage}}</a>
+                                        <a class="page-link" href="/typeProduct/?page={{prevPage}}">{{prevPage}}</a>
                                     </li>
                                     {{/if}}
 
@@ -100,13 +65,13 @@
 
                                     {{#if hasNextPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{nextPage}}">{{nextPage}}</a>
+                                        <a class="page-link" href="/typeProduct/?page={{nextPage}}">{{nextPage}}</a>
                                     </li>
                                     {{/if}}
 
                                     {{#gt lastPage currentPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?page={{nextPage}}" aria-label="Next">
+                                        <a class="page-link" href="/typeProduct/?page={{nextPage}}" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
                                         </a>
@@ -119,7 +84,7 @@
                                 <ul class="pagination justify-content-center">
                                     {{#isnt currentPage 1}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?productId={{productId}}&page={{prevPage}}"
+                                        <a class="page-link" href="/typeProduct/?productId={{productId}}&page={{prevPage}}"
                                             aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
@@ -130,7 +95,7 @@
                                     {{#if hasPreviousPage}}
                                     <li class="page-item">
                                         <a class="page-link"
-                                            href="/?productId={{productId}}&page={{prevPage}}">{{prevPage}}</a>
+                                            href="/typeProduct/?productId={{productId}}&page={{prevPage}}">{{prevPage}}</a>
                                     </li>
                                     {{/if}}
 
@@ -141,13 +106,13 @@
                                     {{#if hasNextPage}}
                                     <li class="page-item">
                                         <a class="page-link"
-                                            href="/?productId={{productId}}&page={{nextPage}}">{{nextPage}}</a>
+                                            href="/typeProduct/?productId={{productId}}&page={{nextPage}}">{{nextPage}}</a>
                                     </li>
                                     {{/if}}
 
                                     {{#gt lastPage currentPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?productId={{productId}}&page={{nextPage}}"
+                                        <a class="page-link" href="/typeProduct/?productId={{productId}}&page={{nextPage}}"
                                             aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
@@ -160,8 +125,7 @@
                                 <ul class="pagination justify-content-center">
                                     {{#isnt currentPage 1}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?q={{q}}&page={{prevPage}}"
-                                            aria-label="Previous">
+                                        <a class="page-link" href="/typeProduct/?q={{q}}&page={{prevPage}}" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
@@ -170,8 +134,7 @@
 
                                     {{#if hasPreviousPage}}
                                     <li class="page-item">
-                                        <a class="page-link"
-                                            href="/?q={{q}}&page={{prevPage}}">{{prevPage}}</a>
+                                        <a class="page-link" href="/typeProduct/?q={{q}}&page={{prevPage}}">{{prevPage}}</a>
                                     </li>
                                     {{/if}}
 
@@ -181,15 +144,13 @@
 
                                     {{#if hasNextPage}}
                                     <li class="page-item">
-                                        <a class="page-link"
-                                            href="/?q={{q}}&page={{nextPage}}">{{nextPage}}</a>
+                                        <a class="page-link" href="/typeProduct/?q={{q}}&page={{nextPage}}">{{nextPage}}</a>
                                     </li>
                                     {{/if}}
 
                                     {{#gt lastPage currentPage}}
                                     <li class="page-item">
-                                        <a class="page-link" href="/?q={{q}}&page={{nextPage}}"
-                                            aria-label="Next">
+                                        <a class="page-link" href="/typeProduct/?q={{q}}&page={{nextPage}}" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
                                         </a>
