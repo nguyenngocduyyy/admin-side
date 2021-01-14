@@ -33,7 +33,7 @@ exports.add = async(req, res, next) => {
             console.log(result);
             body.imgSrc = result.url;
             console.log(body);
-            await editClothModel.add(body);
+            editClothModel.add(body);
             const typeProduct = await editClothModel.listTypeProduct();
             res.render('index/editCloth', { navProduct: 'active', title: 'Add new cloth', typeProduct: typeProduct, btnText: 'ADD NEW', delBtn: 'hidden', body: { imgSrc: 'Select file...' } });
         });
@@ -52,7 +52,7 @@ exports.editPost = async(req, res, next) => {
             editClothModel.add(body);
             console.log(req.body);
             const id = req.params.id;
-            const f = await editClothModel.update(id, body);
+            const f = editClothModel.update(id, body);
             const typeProduct = await editClothModel.listTypeProduct();
             res.render('index/editCloth', { navProduct: 'active', title: 'Edit cloth', f: f, body: body, typeProduct: typeProduct, btnText: 'CONFIRM CHANGES', id: id });
         });
